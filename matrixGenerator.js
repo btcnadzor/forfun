@@ -5,6 +5,13 @@ const rl = readline.createInterface({
     output: process.stdout
 });
 
+/*
+    Генерирует уникальную строку, которая не содержит чисел, которые уже есть в предыдущих строках.
+    prevRows - массив предыдущих строк
+    numbersPerRow - количество чисел в строке
+    min - минимальное значение
+    max - максимальное значение
+*/
 function generateUniqueRow(prevRows, numbersPerRow, min, max) {
     let row;
     do {
@@ -19,6 +26,13 @@ function generateUniqueRow(prevRows, numbersPerRow, min, max) {
     return row;
 }
 
+/*
+    Генерирует матрицу, состоящую из уникальных строк.
+    numbersPerRow - количество чисел в строке
+    rows - количество строк
+    min - минимальное значение
+    max - максимальное значение
+*/      
 function generateMatrix(numbersPerRow = 15, rows = 1, min = 0, max = 100) {
     const matrix = [];
     const prevRows = [];
